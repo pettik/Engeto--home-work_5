@@ -1,0 +1,155 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--text-color: hsl(0, 0%, 12%);
+	--white-color: hsl(0, 0%, 100%);
+	--body-color: hsl(0, 0%, 96%);
+	--container-color: hsl(0, 0%, 100%);
+	--theme-background: hsl(51, 100%, 50%);
+	--box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+}
+
+body {
+	font-family: 'Roboto Slab', serif;
+	background: var(--body-color);
+	position: relative;
+
+	transition: background .4s;
+}
+
+.change-theme {
+	font-size: 1.25rem;
+	color: var(--text-color);
+	transition: color .4s;
+	cursor: pointer;
+	position: fixed;
+	top: -2rem;
+	right: .5rem;
+	padding: .25rem;
+	padding-top: 2rem;
+	background: var(--theme-background);
+	box-shadow: var(--box-shadow);
+	border-radius: 5rem;
+	transition: transform .3s;
+}
+
+.change-theme:hover {
+	transform: translateY(.5rem);
+}
+
+/*==========  Dark theme CSS ==========*/
+body.dark-theme {
+	/* --text-color: hsl(0, 0%, 96%); */
+	--body-color: hsl(0, 0%, 12%);
+	--container-color: hsl(0, 0%, 15%);
+	--box-shadow: box-shadow: 2.2px 4.5px 4.5px hsl(0deg 0% 0% / 0.43);
+}
+
+body.dark-theme h1 {
+	background-image: url('../img/heading_image.jpg');
+	background-position: 50% 15%;
+}
+
+/*========== END OF Dark theme CSS ==========*/
+.container {
+	width: 100%;
+}
+
+
+h1 {
+	text-align: center;
+	margin: 2rem 0;
+	font-size: 12vw;
+	font-weight: 900;
+	background-image: url('../img/heading_image_dark.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 56%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: rgba(0, 0, 0, .3);
+
+}
+
+.photo img {
+	width: 100%;
+	display: block;
+}
+
+.photo {
+	margin: 5px;
+	box-shadow: var(--box-shadow);
+}
+
+/*v následujícím úseků si vyzkoušíš tkz. mobile-first přístup*/
+
+/*tvým úkolem je napsat kód tak, aby:
+šířka 576px - 767px: budou 2 obrázky vedle sebe
+šířka 768px - 991px: budou 3 obrázky vedle sebe*
+šířka 992px a víc: obrázky budou mít základní šířku 200px a v jedné řadě jich bude tolik, kolik se jich tam vejde**/
+
+@media (min-width: 576px) {
+	.photogallery {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	h1 {
+		letter-spacing: -2px;
+	}
+
+	.photo {
+		flex-basis: calc(100% /2 - 10px);
+		flex-grow: 1;
+	}
+}
+
+@media (min-width: 768px) {
+	.photo {
+		margin: 8px;
+		flex-basis: calc(100% / 3 - 10px);
+	}
+}
+
+@media (min-width: 992px) {
+	body {
+		overflow: hidden;
+	}
+
+	h1 {
+		letter-spacing: -5px;
+	}
+
+	.container {
+		width: 90%;
+		margin: 0 auto;
+		height: 100vh;
+	}
+
+	.photo {
+		margin: 10px;
+		flex-basis: calc(100% / 4);
+		max-width: 250px;
+	}
+
+	.change-theme:hover {
+		transform: translateY(1rem);
+	}
+}
+
+/*hint:*/
+/*pokud chcete nápovědu, seskrolujte úplně dolů*/
+
+
+/*nápověda:*/
+/*vlastnosti, které tě zajímají:
+u flex-containeru: display, flex-wrap
+u flex-itemu: flex-basis*/

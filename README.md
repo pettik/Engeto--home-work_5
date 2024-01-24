@@ -9,6 +9,7 @@ The homework assignment for **Lesson 5.1: Advanced Flexbox Properties** in the <
 - CSS breakpoints: 576px, 768px, 992px
 - <a href=“https://github.com/lokesh/lightbox2”>Lightbox2 JS Library</a>
 - Dark/light theme switching
+- Flash effect when hovering the mouse over the images
 
 # Preview of my solution
 <img src="img/site_preview2.jpg" alt="Site preview" >
@@ -27,6 +28,7 @@ Obsahem domácího úkolu lekce **Lekce 5.1: Pokročilé vlastnosti flexboxu** v
 - CSS breakpointy: 576px, 768px, 992px
 - <a href="https://github.com/lokesh/lightbox2">Lightbox2 JS Library</a>
 - dark/light theme přepínání
+- flash efekt při najetí myši přes obrázky
 
 ### Náhled mého řešení
 <img src="img/site_preview2.jpg" alt="Site preview" >
